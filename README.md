@@ -50,3 +50,7 @@ Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamen
 
 *   O modelo de IA pode não ser capaz de entender todos os tipos de currículos e vagas de emprego.
 *   O feedback gerado pelo modelo de IA é apenas uma sugestão e não deve ser considerado como uma avaliação definitiva.\n\n**Isenção de responsabilidade:**\n\nEste código é fornecido apenas para fins educacionais e informativos. O autor não se responsabiliza por quaisquer danos ou perdas resultantes do uso deste código.
+
+**Demonstração:**
+Demonstração feita no Google Colab
+![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/Demo-Job_AI_Match.gif)
