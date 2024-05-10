@@ -1,7 +1,8 @@
-# Job-AI-Match
+# Job AI Match: Análise de Currículos com Poder de IA
 Repositório para o desafio da Imersão Inteligência Artificial 2ª Edição
 
-Este código Python utiliza a API do Google Generative AI para analisar um currículo em formato PDF e fornecer feedback sobre a adequação do candidato a uma vaga de emprego específica.
+
+Job AI Match é uma aplicação inovadora que utiliza o poder do modelo de linguagem Gemini para analisar currículos e fornecer feedback valioso sobre a adequação de um candidato a uma vaga de emprego específica.
 
 **Funcionalidades:**
 
