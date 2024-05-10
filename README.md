@@ -23,6 +23,11 @@ Job AI Match é uma aplicação inovadora que utiliza o poder do modelo de lingu
 4.  **Inserir o link da vaga:** Cole o link da vaga de emprego que você deseja se candidatar.
 5.  **Obter feedback:** O modelo de IA irá analisar seu currículo e fornecer feedback estruturado.
 
+Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamento da vaga, exemplo:
+
+![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/linkedId-share.png)
+![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/gupy-share.png)
+
 **Requisitos:**
 
 *   Python 3.x
