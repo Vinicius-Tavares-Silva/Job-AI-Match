@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ofetch": "^1.3.4",
     "vue": "^3.4.21"
   },
   "devDependencies": {
