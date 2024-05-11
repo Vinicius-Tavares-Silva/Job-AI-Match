@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async getData() {
-      const response = await ofetch(`http://localhost:8000/items/${this.count}?q=somequery`)
+      const response = await ofetch(`https://job-ai-match-backend.vercel.app/items/${this.count}?q=somequery`)
       console.log(response)
       this.response = response
     }
