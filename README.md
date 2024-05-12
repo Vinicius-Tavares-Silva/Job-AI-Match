@@ -15,24 +15,7 @@ Job AI Match é uma aplicação inovadora que utiliza o poder do modelo de lingu
     *   **Pontos a Melhorar:** Áreas onde o candidato pode se desenvolver para se tornar um candidato mais forte.
     *   **Recomendações:** Sugestões sobre como o candidato pode melhorar seu currículo ou se preparar para a entrevista.
     *   **Conclusão:** Uma avaliação geral da adequação do candidato à vaga.
-    
-**Como usar:**
-1.  **Configurar a API:** Obtenha uma chave de API do Google Generative AI e defina-a na variável `api_key`.
-2.  **Executar o código:** Execute o script Python no Google Colab ou em um ambiente Python local com as bibliotecas necessárias instaladas.
-3.  **Fazer upload do currículo:** Siga as instruções para fazer upload do seu currículo em formato PDF.
-4.  **Inserir o link da vaga:** Cole o link da vaga de emprego que você deseja se candidatar.
-5.  **Obter feedback:** O modelo de IA irá analisar seu currículo e fornecer feedback estruturado.
-
-Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamento da vaga, exemplo:
-
-![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/linkedId-share.png)
-![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/gupy-share.png)
-
-**Requisitos:**
-
-*   Python 3.x
-*   Bibliotecas: `hashlib`, `string`, `requests`, `textwrap`, `pdfx`, `pathlib`, `bs4`, `IPython`, `google.colab`, `google.generativeai`
-
+ 
 **Observações:**
 
 *   O modelo de IA foi treinado para analisar currículos e vagas de emprego na área de tecnologia.
@@ -51,6 +34,38 @@ Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamen
 *   O modelo de IA pode não ser capaz de entender todos os tipos de currículos e vagas de emprego.
 *   O feedback gerado pelo modelo de IA é apenas uma sugestão e não deve ser considerado como uma avaliação definitiva.\n\n**Isenção de responsabilidade:**\n\nEste código é fornecido apenas para fins educacionais e informativos. O autor não se responsabiliza por quaisquer danos ou perdas resultantes do uso deste código.
 
+    
+**Como usar:**
+
+### Protótipo
+
+1.  ** Arquivo se encontra na pasta prototype
+2.  **Configurar a API:** Obtenha uma chave de API do Google Generative AI e defina-a na variável `api_key`.
+3.  **Executar o código:** Execute o script Python no Google Colab ou em um ambiente Python local com as bibliotecas necessárias instaladas.
+4.  **Fazer upload do currículo:** Siga as instruções para fazer upload do seu currículo em formato PDF.
+5.  **Inserir o link da vaga:** Cole o link da vaga de emprego que você deseja se candidatar.
+6.  **Obter feedback:** O modelo de IA irá analisar seu currículo e fornecer feedback estruturado.
+
+Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamento da vaga, exemplo:
+
+![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/linkedId-share.png)
+![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/gupy-share.png)
+
+**Requisitos:**
+
+*   Python 3.x
+*   Bibliotecas: `hashlib`, `string`, `requests`, `textwrap`, `pdfx`, `pathlib`, `bs4`, `IPython`, `google.colab`, `google.generativeai`
+
+### Aplicação
+
+* dentro do diretorio app se encontram o diretorio da api e do frontend, cada um com seu respectivo README para execução
+
+
 **Demonstração:**
+
+* Protótipo
 Demonstração feita no Google Colab
 ![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/Demo-Job_AI_Match.gif)
+
+* Aplicação
+[JOB AI MATCH](https://job-ai-match-vue.vercel.app/)
