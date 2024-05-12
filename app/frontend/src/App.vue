@@ -141,7 +141,7 @@ export default {
         body,
       })
       this.response = response
-      this.saveMatchOnLocalStorage(response)
+      // this.saveMatchOnLocalStorage(response)
       this.isLoading = false
     },
     async readFile(event) {
@@ -154,7 +154,7 @@ export default {
         body: form,
       })
       this.resume = response
-      // this.saveResumeOnLocalStorage(response)
+      this.saveResumeOnLocalStorage(response)
     },
     saveResumeOnLocalStorage(response) {
       localStorage.setItem('resume', response)
