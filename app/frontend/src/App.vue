@@ -18,8 +18,8 @@
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content bg-base">
       <div class="flex flex-col items-start justify-between sm:flex-row">
-        <div class="flex-grow mr-2">
-          <div class="mx-2 font-semibold">
+        <div class="flex-grow mx-2">
+          <div class="font-semibold">
             <h4>Utilize o Job AI Match em 3 passos simples:</h4>
             <ol>
               <li class="my-3">
@@ -34,7 +34,7 @@
                 <ul>
                   <li>Copie o link da vaga desejada no LinkedIn, Gupy, ou outra plataforma de emprego.</li>
                   <li>Cole o link no campo designado "Link da Vaga".</li>
-                  <li>Assim que terminar uma análise vc pode inserir um novo link</li>
+                  <li>Assim que terminar uma análise vc pode inserir um novo link!</li>
                 </ul>
               </li>
               <li class="mb-3">
@@ -67,11 +67,15 @@
             <span v-if="isLoading" class="loading loading-spinner"></span>
             <span v-else>Match!</span>
           </button>
+          <div v-if="errorText" role="alert" class="alert alert-error">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>{{ errorText }}</span>
+          </div>
         </div>
   
         <div class="mockup-window border bg-secondary w-[90%] sm:w-[60%] mx-2 my-1">
           <div
-            class="px-4 py-16 border-t border-base-300"
+            class="px-4 py-8 border-t border-base-300"
             v-html="matchFeedback"
           >
           </div>
@@ -109,6 +113,7 @@ export default {
     resume: null,
     isLoading: false,
     matches: [],
+    errorText: null,
   }),
   computed: {
     disableMatchBtn() {
@@ -131,30 +136,43 @@ export default {
   },
   methods: {
     async checkJobMatch() {
+      this.errorText = null
       this.isLoading = true
       const body = {
         resume: this.resume,
         job_url: this.jobUrl,
       }
-      const response = await ofetch('https://api-job-ai-match.vercel.app/job-match', {
-        method: 'POST',
-        body,
-      })
-      this.response = response
+      try {
+        const response = await ofetch('http://localhost:5000/job-match', {
+          method: 'POST',
+          body,
+        })
+        this.response = response
+        this.ur
+        this.isLoading = false
+      } catch (error) {
+        this.errorText = 'Erro ao realizar match. Tente novamente.'
+        this.isLoading = false
+      }
       // this.saveMatchOnLocalStorage(response)
       this.isLoading = false
     },
     async readFile(event) {
+      this.errorText = null
       console.log(event.target.files[0])
       const file = event.target.files[0]
       const form = new FormData()
       form.append('file', file)
-      const response = await ofetch('https://api-job-ai-match.vercel.app/read_resume', {
-        method: 'POST',
-        body: form,
-      })
-      this.resume = response
-      this.saveResumeOnLocalStorage(response)
+      try {
+        const response = await ofetch('http://localhost:5000/read_resume', {
+          method: 'POST',
+          body: form,
+        })
+        this.resume = response
+        this.saveResumeOnLocalStorage(response)
+      } catch (error) {
+        this.errorText = 'Erro ao ler arquivo. Verifique se o arquivo é um PDF.'
+      }
     },
     saveResumeOnLocalStorage(response) {
       localStorage.setItem('resume', response)
