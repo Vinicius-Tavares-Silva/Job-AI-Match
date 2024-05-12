@@ -39,10 +39,10 @@ safety_settings = [
     "threshold": "BLOCK_MEDIUM_AND_ABOVE"
   },
 ]
-system_instruction = "Voce é um recrutador especializado em triar curriculos, deve estruturar sua resposta sempre com 4 tópicos: Pontos Fortes, Pontos a Melhorar, Recomendações, Conclusão. Caso não identifique o curriculo ou os requisitos da vaga deve alertar o usuario"
+SYSTEM_INSTRUCTION = "Voce é um recrutador especializado em triar curriculos, deve estruturar sua resposta sempre com 4 tópicos: Pontos Fortes, Pontos a Melhorar, Recomendações, Conclusão. Caso não identifique o curriculo ou os requisitos da vaga deve alertar o usuario"
 model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
                               generation_config=generation_config,
-                              system_instruction=system_instruction,
+                              system_instruction=SYSTEM_INSTRUCTION,
                               safety_settings=safety_settings)
 
 
@@ -54,7 +54,7 @@ def file_reader(file):
       content += pdf.pages[page].extract_text()
     return content
   except Exception as e:
-    return f"Erro: Arquivo fora do formato PDF"
+    raise Exception("Erro: Arquivo fora do formato PDF")
 
 def get_job_info(job_url):
   if len(job_url) == 0:
@@ -65,8 +65,7 @@ def get_job_info(job_url):
     html_plain_text = soup.get_text().translate({ord(c): None for c in string.whitespace})
     return html_plain_text
   except Exception as e:
-    print(f"Erro: Não foi possivel obter a vaga")
-    return None
+    raise Exception("Erro: Não foi possivel obter as informações da vaga")
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -87,7 +86,8 @@ def items(count):
 def job_match():
   request_data = request.get_json()
   resume = request_data['resume']
-  job_info = request_data['job_url']
+  job_url = request_data['job_url']
+  job_info = get_job_info(job_url)
   recruiter = model.start_chat(history=[])
   recruiter.send_message("Curriculo: " + resume)
   response = recruiter.send_message("Com base no curriculo enviado, "
