@@ -37,6 +37,10 @@ Job AI Match é uma aplicação inovadora que utiliza o poder do modelo de lingu
     
 **Como usar:**
 
+### Aplicação
+
+* dentro do diretorio app se encontram o diretorio da api e do frontend, cada um com seu respectivo README para execução
+
 ### Protótipo
 
 1.  ** Arquivo se encontra na pasta prototype
@@ -56,16 +60,13 @@ Para obter o link da vaga selecione a opção de "Copiar link" no compartilhamen
 *   Python 3.x
 *   Bibliotecas: `hashlib`, `string`, `requests`, `textwrap`, `pdfx`, `pathlib`, `bs4`, `IPython`, `google.colab`, `google.generativeai`
 
-### Aplicação
-
-* dentro do diretorio app se encontram o diretorio da api e do frontend, cada um com seu respectivo README para execução
-
 
 **Demonstração:**
+
+* Aplicação
+[JOB AI MATCH](https://job-ai-match-vue.vercel.app/)
 
 * Protótipo
 Demonstração feita no Google Colab
 ![alt text](https://github.com/Vinicius-Tavares-Silva/Job-AI-Match/blob/main/images/Demo-Job_AI_Match.gif)
 
-* Aplicação
-[JOB AI MATCH](https://job-ai-match-vue.vercel.app/)
