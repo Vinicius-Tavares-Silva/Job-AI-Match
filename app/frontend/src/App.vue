@@ -143,7 +143,7 @@ export default {
         job_url: this.jobUrl,
       }
       try {
-        const response = await ofetch('http://localhost:5000/job-match', {
+        const response = await ofetch('https://api-job-ai-match.vercel.app/job-match', {
           method: 'POST',
           body,
         })
@@ -164,7 +164,7 @@ export default {
       const form = new FormData()
       form.append('file', file)
       try {
-        const response = await ofetch('http://localhost:5000/read_resume', {
+        const response = await ofetch('https://api-job-ai-match.vercel.app/read_resume', {
           method: 'POST',
           body: form,
         })
