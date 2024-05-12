@@ -63,7 +63,7 @@
               <input type="text" class="grow" placeholder="Link da Vaga" v-model="jobUrl" />
             </label>
           </div>
-          <button class="btn btn-primary my-2 w-[100%]" :disabled="disableMatchBtn || isLoading" @click="checkJobMatch">
+          <button class="btn btn-warning my-2 w-[100%]" :disabled="disableMatchBtn || isLoading" @click="checkJobMatch">
             <span v-if="isLoading" class="loading loading-spinner"></span>
             <span v-else>Match!</span>
           </button>
@@ -73,7 +73,7 @@
           </div>
         </div>
   
-        <div class="mockup-window border bg-secondary w-[90%] sm:w-[60%] mx-2 my-1">
+        <div class="mockup-window border bg-secondary w-[97%] sm:w-[60%] mx-2 my-1 h-[70vh] overflow-auto">
           <div
             class="px-4 py-8 border-t border-base-300"
             v-html="matchFeedback"
